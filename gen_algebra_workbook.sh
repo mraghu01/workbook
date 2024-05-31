@@ -4,13 +4,15 @@
 mkdir worksheets
 cd worksheets
 
-# Generate 10 LaTeX files using the algebra_worksheet3.py script
-for i in {1..10}; do
-    python3 ../algebra_worksheet3.py > "worksheet$i.tex"
+n=10
+
+# Generate n LaTeX files using the algebra_worksheet3.py script
+for i in $(seq 1 $n); do
+    python3 ../algebra_worksheet4.py > "worksheet$i.tex"
 done
 
 # Compile each LaTeX file into a PDF
-for i in {1..10}; do
+for i in $(seq 1 $n); do
     pdflatex "worksheet$i.tex"
 done
 
