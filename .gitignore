@@ -6,3 +6,9 @@ div_worksheet31.log
 div_worksheet31.pdf
 div_worksheet31.synctex.gz
 tmp
+*.pdf
+*.aux
+*.log
+*.gz
+multiplication_worksheet.tex
+temp.tex
