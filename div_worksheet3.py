@@ -8,9 +8,14 @@ def generate_division_row(divisor_range, dividend_range):
     dividend = random.choice(dividend_range)
     
     # Round the dividend to the nearest 10 that is still divisible by the divisor
-    rounded_dividend = round(dividend, -1)
+    rounded_dividend = round(dividend, -2)
     while rounded_dividend % divisor != 0:
-        rounded_dividend -= 10
+        rounded_dividend -= 100
+
+    if rounded_dividend == 0:
+        rounded_dividend = round(dividend, -1)
+        while rounded_dividend % divisor != 0:
+            rounded_dividend -= 10
     
     # Calculate the difference
     difference = abs(dividend - rounded_dividend)
@@ -51,8 +56,8 @@ tableheader = '''
 print(tableheader)
 
 # Define the range for divisors and dividends
-divisor_range = list(range(6, 19))
-dividend_range = list(range(500, 5000))
+divisor_range = list(range(6, 29))
+dividend_range = list(range(1000, 10000))
 
 # Generate 5 random rows
 for _ in range(5):
